@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import FilterBar from './FilterBar/FilterBar'
 import MotorcycleGrid from './MotorcycleGrid/MotorcycleGrid'
 
-const Catalog = ({ motorcycles, onProductClick }) => {
-  const [filteredMotorcycles, setFilteredMotorcycles] = useState(motorcycles)
-
-  useEffect(() => {
-    setFilteredMotorcycles(motorcycles)
-  }, [motorcycles])
+const Catalog = ({ motorcycles = [], onProductClick }) => {
+  const [filteredMotorcycles, setFilteredMotorcycles] = useState(motorcycles || [])
 
   return (
     <section id="catalog" className="py-section bg-darker">
